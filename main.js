@@ -24,6 +24,10 @@ function init() {
 
     const cube = loader.load('./cube.json', (geometry, materials) => {
 
+        materials.forEach(function(material) {
+            material.skinning = true;
+        });
+
         var mesh = new THREE.SkinnedMesh(
             geometry, materials
         );
